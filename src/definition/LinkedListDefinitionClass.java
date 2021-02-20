@@ -17,6 +17,7 @@ public class LinkedListDefinitionClass<E> implements LinkedListADTInterface<E> {
 
     // This reference variable will store the reference to the first node of the linked list.
     private Node<E> head = null;
+    private Node<E> tail = null;
 
     // This variable will store the current size of the linked list.
     private int size = 0;
@@ -233,7 +234,11 @@ public class LinkedListDefinitionClass<E> implements LinkedListADTInterface<E> {
 
     @Override
     public void sort() {
+        for (int i = 0; i < size-1; i++) {
+            Node<E> firstNode = this.getNode(i);
+            Node<E> secondNode = this.getNode(i+1);
 
+        }
     }
 
     /**
@@ -257,10 +262,12 @@ public class LinkedListDefinitionClass<E> implements LinkedListADTInterface<E> {
         // these are the fields for the singly-linked list
         private E data;
         private Node<E> next;
+        private Node<E> previous;
 
         // constructor to initialize the data field of the node
         private Node(E data) {
             this.data = data;
+            this.next = null;
         }
 
         // constructor to initialize both the fields of the node
@@ -278,5 +285,7 @@ public class LinkedListDefinitionClass<E> implements LinkedListADTInterface<E> {
         private Node<E> getNext() {
             return next;
         }
+
+
     }
 }
